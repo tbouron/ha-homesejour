@@ -1,0 +1,66 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion à HomeSejour",
+        "description": "Utilisez votre compte propriétaire homesejour.fr. La clé secrète TOTP est la clé base32 derrière le QR code de votre application d'authentification.",
+        "data": {
+          "username": "E-mail",
+          "password": "Mot de passe",
+          "totp_secret": "Clé secrète TOTP"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reconnexion à HomeSejour",
+        "description": "HomeSejour a refusé les identifiants de {username}. Saisissez à nouveau le mot de passe et la clé secrète TOTP.",
+        "data": {
+          "password": "Mot de passe",
+          "totp_secret": "Clé secrète TOTP"
+        }
+      },
+      "reconfigure": {
+        "title": "Modifier les identifiants HomeSejour",
+        "data": {
+          "username": "E-mail",
+          "password": "Mot de passe",
+          "totp_secret": "Clé secrète TOTP"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter à homesejour.fr",
+      "invalid_auth": "E-mail, mot de passe ou code TOTP refusé",
+      "invalid_totp_secret": "Cette clé secrète TOTP base32 n'est pas valide",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "Ce compte HomeSejour est déjà configuré",
+      "reauth_successful": "Reconnexion réussie",
+      "reconfigure_successful": "Reconfiguration réussie",
+      "wrong_account": "Utilisez le même compte HomeSejour ; ajoutez une nouvelle entrée pour un autre compte"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Horaires des réservations",
+        "description": "HomeSejour ne fournit que des dates. Ces horaires sont utilisés pour les événements du calendrier.",
+        "data": {
+          "checkin_time": "Heure d'arrivée",
+          "checkout_time": "Heure de départ"
+        }
+      }
+    }
+  },
+  "entity": {
+    "calendar": {
+      "rental": { "name": "Réservations locatives" },
+      "owner": { "name": "Réservations propriétaire" }
+    },
+    "sensor": {
+      "total_earnings": { "name": "Revenus totaux" },
+      "rental_days": { "name": "Jours loués" },
+      "owner_days": { "name": "Jours propriétaire" }
+    }
+  }
+}

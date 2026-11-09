@@ -1,0 +1,66 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to HomeSejour",
+        "description": "Use your homesejour.fr owner account. The TOTP secret is the base32 key behind the QR code of your authenticator app.",
+        "data": {
+          "username": "Email",
+          "password": "Password",
+          "totp_secret": "TOTP secret key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to HomeSejour again",
+        "description": "HomeSejour rejected the credentials of {username}. Enter the password and TOTP secret again.",
+        "data": {
+          "password": "Password",
+          "totp_secret": "TOTP secret key"
+        }
+      },
+      "reconfigure": {
+        "title": "Update HomeSejour credentials",
+        "data": {
+          "username": "Email",
+          "password": "Password",
+          "totp_secret": "TOTP secret key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to homesejour.fr",
+      "invalid_auth": "Email, password or TOTP code rejected",
+      "invalid_totp_secret": "This is not a valid base32 TOTP secret",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This HomeSejour account is already configured",
+      "reauth_successful": "Re-authentication was successful",
+      "reconfigure_successful": "Reconfiguration was successful",
+      "wrong_account": "Use the same HomeSejour account; add a new entry for another account"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Booking times",
+        "description": "HomeSejour only gives dates. These times are used for calendar events.",
+        "data": {
+          "checkin_time": "Check-in time",
+          "checkout_time": "Check-out time"
+        }
+      }
+    }
+  },
+  "entity": {
+    "calendar": {
+      "rental": { "name": "Rental bookings" },
+      "owner": { "name": "Owner bookings" }
+    },
+    "sensor": {
+      "total_earnings": { "name": "Total earnings" },
+      "rental_days": { "name": "Rental days" },
+      "owner_days": { "name": "Owner days" }
+    }
+  }
+}
