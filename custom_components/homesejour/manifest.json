@@ -1,6 +1,9 @@
 {
   "domain": "homesejour",
   "name": "HomeSejour",
+  "categories": [
+    "productivity_information.calendars_todos"
+  ],
   "codeowners": [
     "@tbouron"
   ],
