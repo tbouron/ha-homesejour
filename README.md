@@ -31,7 +31,7 @@ Entity ids use the property reference, e.g. `TERROIRS` → `sensor.homesejour_te
 
 | Entity | State | Attributes |
 |---|---|---|
-| `sensor.homesejour_<ref>_total_earnings` | Sum of "Net propriétaire" of all rental bookings (€) | `{year: "1234.56 €"}` by check-in year |
+| `sensor.homesejour_<ref>_total_earnings` | Sum of "Net propriétaire" of all rental bookings (€) | `{year: 1234.56}` (float, €) by check-in year |
 | `sensor.homesejour_<ref>_rental_days` | Total nights of rental bookings | `breakdown: {year: {month: nights}}` |
 | `sensor.homesejour_<ref>_owner_days` | Total nights of owner bookings | `breakdown: {year: {month: nights}}` |
 | `calendar.homesejour_<ref>_rental` | On during a rental stay | Event: booking reference, `💸 <net> €`, `Réservé via <origine>` |

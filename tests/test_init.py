@@ -65,8 +65,8 @@ async def test_sensors(hass: HomeAssistant, mock_client: AsyncMock, config_entry
     earnings = hass.states.get("sensor.homesejour_exemple_total_earnings")
     assert float(earnings.state) == 2084.56  # resa 1234.56 + closed 850; owner and cancelled excluded
     assert earnings.attributes["unit_of_measurement"] == "€"
-    assert earnings.attributes[2026] == "850.00 €"
-    assert earnings.attributes[2027] == "1234.56 €"
+    assert earnings.attributes[2026] == 850.0
+    assert earnings.attributes[2027] == 1234.56
 
     rental = hass.states.get("sensor.homesejour_exemple_rental_days")
     assert rental.state == "12"

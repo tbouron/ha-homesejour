@@ -1,6 +1,6 @@
 """Sensors for HomeSejour: earnings, rental days and owner days per property.
 
-Same keys and attribute shapes as the Avantio integration (tbouron/ha-avantio).
+Same keys as the Avantio integration (tbouron/ha-avantio); yearly earnings attributes are floats.
 """
 
 from __future__ import annotations
@@ -40,8 +40,8 @@ SENSORS: tuple[HomeSejourSensorDescription, ...] = (
         native_unit_of_measurement=CURRENCY_EURO,
         suggested_display_precision=2,
         value_fn=lambda d: d.total_earnings,
-        # Same shape as Avantio: {year: "1234.56 €"}
-        attrs_fn=lambda d: {year: f"{value:.2f} €" for year, value in d.earnings_by_year.items()},
+        # {year: 1234.56}, in the sensor's unit (€)
+        attrs_fn=lambda d: dict(d.earnings_by_year),
     ),
     HomeSejourSensorDescription(
         key="rental_days",
