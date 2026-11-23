@@ -44,7 +44,7 @@ async def _setup(hass: HomeAssistant, entry: MockConfigEntry) -> None:
         ("owner", 0.0, "owner"),
         ("locked", None, "owner"),
         ("resa", 100.0, "rental"),
-        ("option", 100.0, "rental"),
+        ("option", 100.0, None),
         ("to", 0.0, "rental"),
         ("closed", 850.0, "rental"),
         ("closed", 0.0, "owner"),
