@@ -44,9 +44,9 @@ Entity ids use the property reference, e.g. `TERROIRS` → `sensor.homesejour_te
 | État on HomeSejour | Calendar |
 |---|---|
 | Réservation personnelle, Période réservée à ma gestion | owner |
-| La propriété est réservée, Une option est posée, Période fournie à un TO | rental |
+| La propriété est réservée, Période fournie à un TO | rental |
 | Ce dossier est clôturé | rental, or owner when its net is 0 € |
-| Ce dossier est annulé, Information indisponible | ignored |
+| Une option est posée, Ce dossier est annulé, Information indisponible | ignored |
 
 ## New booking alerts
 

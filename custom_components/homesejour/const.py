@@ -8,7 +8,6 @@ from typing import Final
 from .client import (
     STATE_CLOSED,
     STATE_LOCKED,
-    STATE_OPTION,
     STATE_OWNER,
     STATE_RESERVED,
     STATE_TOUR_OPERATOR,
@@ -29,7 +28,8 @@ KIND_RENTAL: Final = "rental"
 KIND_OWNER: Final = "owner"
 
 # État -> calendar. "closed" is decided by amount, see coordinator.classify_booking.
-RENTAL_STATES: Final = frozenset({STATE_RESERVED, STATE_OPTION, STATE_TOUR_OPERATOR})
+# "option" (Une option est posée) is not a booking yet: it is ignored until confirmed.
+RENTAL_STATES: Final = frozenset({STATE_RESERVED, STATE_TOUR_OPERATOR})
 OWNER_STATES: Final = frozenset({STATE_OWNER, STATE_LOCKED})
 CLOSED_STATE: Final = STATE_CLOSED
 
